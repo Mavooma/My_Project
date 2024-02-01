@@ -1,0 +1,74 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.weather-container{
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.current-weather h1{
+    margin: 0;
+    color: #c77070;
+    font-size: 2em;
+}
+
+.current-weather p{
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.forecast{
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.forecast-today{
+    margin-bottom: 10px;
+}
+
+.change-city{
+    background-color: #0084ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 20px;
+    outline: none;
+}
+
+.change-city:hover{
+    background-color: #0056b3;
+}
+
+.credits{
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 40px;
+}
+
+.forecast-today p:first-child{
+    font-weight: bold;
+}
+
+.weather-icon{
+    max-width: 100px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.daily-weather-icon {
+    width: 20px; /* Example size, adjust as needed */
+    height: auto;
+    margin-right: 5px; /* Adds some space between the icon and the text */
+    vertical-align: middle; /* Aligns the icon vertically with the text */
+  }

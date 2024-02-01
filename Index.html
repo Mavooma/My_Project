@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css"> 
+    <style>
+
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.weather-container{
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.current-weather h1{
+    margin: 0;
+    color: #c77070;
+    font-size: 2em;
+}
+
+.current-weather p{
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.current-weather p:hover{
+    color: #007bff;
+}
+
+.forecast{
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.forecast-today{
+    margin-bottom: 10px;
+}
+
+.forecast-today:hover{
+    color: #007bff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.change-city{
+    background-color: #0084ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 20px;
+    outline: none;
+}
+
+.change-city:hover{
+    background-color: #0056b3;
+}
+
+.credits{
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 40px;
+}
+
+.forecast-today p:first-child{
+    font-weight: bold;
+}
+
+.weather-icon{
+    max-width: 100px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.daily-weather-icon {
+    width: 20px; /* Example size, adjust as needed */
+    height: auto;
+    margin-right: 5px; /* Adds some space between the icon and the text */
+    vertical-align: middle; /* Aligns the icon vertically with the text */
+  }
+    </style>
+    <title>weather forecast</title>
+</head>
+<body>
+    <div class="weather-container">
+        <div class="current-weather">
+            <img src="images/img1.png" alt="img1" class="weather-icon">
+            <h1>Currently 23° in Margate</h1>
+
+            <p>13° / 23°</p>
+        </div>
+
+        <div class="forecast">
+            <div class="forecast-today">
+                <p><img src="images/img2.png" alt="Cloudy weather icon" class="daily-weather-icon">Tomorrow</p>
+                <p>18° / 24°</p>
+            </div>
+
+            <div class="forecast-today">
+                <p><img src="images/img3.png" alt="Partly cloudy weather icon" class="daily-weather-icon">Saturday</p>
+                <p>20° / 28°</p>
+            </div>
+
+            <div class="forecast-today">
+                <p><img src="images/img4.png" alt="Sunny weather icon" class="daily-weather-icon">Sunday</p>
+                <p>23° / 30°</p>
+            </div>
+        </div>
+
+        <button class="change-city">Change City</button>
+        <p class="credits">Coded by: Vuyelwa Mavuma</p>
+    </div>
+</body>
+</html>
