@@ -96,7 +96,7 @@ body, html{
 <body>
     <div class="weather-container">
         <div class="current-weather">
-            <img src="images/img1.png" alt="img1" class="weather-icon">
+            <span id="weatherEmoji" style="font-size: 3em;">☀️</span>
             <h1>Currently 23° in Margate</h1>
 
             <p>13° / 23°</p>
@@ -119,8 +119,62 @@ body, html{
             </div>
         </div>
 
-        <button class="change-city">Change City</button>
+        <button class="change-city" id="changeCityBtn">Change City</button>
         <p class="credits">Coded by: Vuyelwa Mavuma</p>
     </div>
+    <script>
+        // get all elements with the class day-box
+        let forecastBoxes = document.querySelectorAll('.day-box');
+
+        // function to change the background color
+        function changeBackgroundColor(event){
+            event.target.style.backgroundColor = 'lightpeachpuff';
+        }
+
+        // funtion to reset the background color
+        function resetBackgroundColor(event){
+            event.target.style.backgroundColor = '';
+        }
+
+        // add event listeners for each box
+        forecastBoxes.forEach(function(box){
+            box.addEventListener('mouseenter', changeBackgroundColor);
+            box.addEventListener('mouseleave', resetBackgroundColor);
+        });
+
+        // get the button, image, and elements that need to be updated
+        let changeCityButton = document.getElementById('changeCityBtn');
+        let currentWeatherHeader = document.querySelector('.current-weather h1');
+        let weatherEmoji = document.getElementById('wetherEmoji');
+
+        // function to prompt the city and temperature and update the HTML
+        function changeCityAndTemperature(){
+            let city = prompt("What city are you currently in?");
+            let temperature = prompt("What is the temperature?");
+
+            // check if the user actually entered something and if it's a number
+            if(city && temperature !== null && !isNaN(temperature)){
+                // parse the temperature to a number
+                let tempNumber = parseInt(temperature, 10);
+
+                // update the weather icon based on the temperature
+                if(tempNumber < 0){
+                    // set source to cold emoji if temperature is below 0
+                    weatherEmoji.textContent = '🥶';
+                } else{
+                    //set source tool happy emoji if temperature is 0 or above
+                    weatherEmoji.textContent = '😊';
+                }
+
+                // update the temperature to display with "°C"
+                currentWeatherHeader.innerHTML = `Currently ${temperature}°C in ${city}`;
+            } else{
+                alert("You did not enter a city and/or temperature.");
+            }
+        }
+
+        // add event listener for the button
+        changeCityButton.addEventListener('click', changeCityAndTemperature);
+    </script>
 </body>
 </html>
