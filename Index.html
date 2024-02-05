@@ -143,9 +143,10 @@ body, html{
         });
 
         // get the button, image, and elements that need to be updated
+        let weatherEmoji = document.getElementById('weatherEmoji');
         let changeCityButton = document.getElementById('changeCityBtn');
         let currentWeatherHeader = document.querySelector('.current-weather h1');
-        let weatherEmoji = document.getElementById('wetherEmoji');
+
 
         // function to prompt the city and temperature and update the HTML
         function changeCityAndTemperature(){
